@@ -11,67 +11,6 @@ let pokemonList = [
     { name: 'Caterpie', height: 3, types: ['bug'] }
 ];
 
-// for (let i = 0; i < pokemonList.length; i++) {
-//     if (pokemonList[i].height < 10 && pokemonList[i].height >= 5) {
-//         document.write(pokemonList[i].name + ' is medium size.  ')
-//     } else if (pokemonList[i].height < 5) {
-//         document.write(pokemonList[i].name + ' is small size.  ')
-//     } else {
-//         document.write(pokemonList[i].name + ' is HUGE!!  ')
-//     }
-// }
-
-
-// for (let i = 0; i < pokemonList.length; i++) {
-//     if (pokemonList[i].height >= 10) {
-//         document.write(pokemonList[i].name + ' \(height\: ' + pokemonList[i].height + '\) \- is HUGE!' + '<br>')
-//     } else {
-//         document.write(pokemonList[i].name + ' \(height\: ' + pokemonList[i].height + '\)' + '<br>')
-//     }
-// }
-
-
-// for (let i = 0; i < pokemonList.length; i++) {
-//     if (pokemonList[i].height >= 10) {
-//         document.write(pokemonList[i].name + ' \(height\: ' + pokemonList[i].height + '\) \- is HUGE!' + '<br>')
-//     } else if (pokemonList[i].types == 'fire') {
-//         document.write(pokemonList[i].name + ' \(height\: ' + pokemonList[i].height + '\) \- is ON FIRE!' + '<br>')
-//     } else {
-//         document.write(pokemonList[i].name + ' \(height\: ' + pokemonList[i].height + '\)' + '<br>')
-//     }
-// }
-
-// for (let i = 0; i < pokemonList.length; i++) {
-//     if (pokemonList[i].height >= 10) {
-//         document.write(pokemonList[i].name + ' \(height\: ' + pokemonList[i].height + '\) \- is HUGE!' + '<br>')
-//     } else if (pokemonList[i].height >= 10 && pokemonList[i].types == 'water') {
-//         document.write(pokemonList[i].name + ' \(height\: ' + pokemonList[i].height + '\) \- is a big swimmer!' + '<br>')
-//     } else {
-//         document.write(pokemonList[i].name + ' \(height\: ' + pokemonList[i].height + '\)' + '<br>')
-//     }
-// }
-
-
-// for (let i = 0; i < pokemonList.length; i++) {
-//     if (pokemonList[i].height >= 10 && pokemonList[i].types === 'water') {
-//         document.write(pokemonList[i].name + ' \(height\: ' + pokemonList[i].height + '\) \- is a big swimmer!' + '<br>')
-//     } else if (pokemonList[i].height >= 10) {
-//         document.write(pokemonList[i].name + ' \(height\: ' + pokemonList[i].height + '\) \- is HUGE!' + '<br>')
-//     } else {
-//         document.write(pokemonList[i].name + ' \(height\: ' + pokemonList[i].height + '\)' + '<br>')
-//     }
-// }
-
-
-
-// for (let i = 0; i < pokemonList.length; i++) {
-//     if (pokemonList[i].types == 'fire') {
-//         document.write(pokemonList[i].name + ' \(height\: ' + pokemonList[i].height + '\) \- is ON FIRE!' + '<br>')
-//     } else {
-//         document.write(pokemonList[i].name + ' \(height\: ' + pokemonList[i].height + '\)' + '<br>')
-//     }
-// }
-
 
 for (let i = 0; i < pokemonList.length; i++) {
     if (pokemonList[i].height > 15) {
