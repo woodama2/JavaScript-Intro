@@ -12,14 +12,6 @@ let pokemonList = [
 ];
 
 
-for (let i = 0; i < pokemonList.length; i++) {
-    if (pokemonList[i].height > 15) {
-        document.write(pokemonList[i].name + ' \(height\: ' + pokemonList[i].height + '\) \- Wow\, that\'s big!' + '<br>')
-    } else {
-        document.write(pokemonList[i].name + ' \(height\: ' + pokemonList[i].height + '\)' + '<br>')
-    }
-}
-
 // function divide(dividend, divisor) {
 //     if (divisor === 0){
 //         return "You're trying to divide by zero."
@@ -33,3 +25,33 @@ for (let i = 0; i < pokemonList.length; i++) {
 // document.write(divide(7, 0));
 // document.write(divide(1, 4));
 // document.write(divide(12, -3));
+
+
+
+// written using for() basic loop syntax
+// for (let i = 0; i < pokemonList.length; i++) {
+//     if (pokemonList[i].height > 15) {
+//         document.write(pokemonList[i].name + ' \(height\: ' + pokemonList[i].height + '\) \- Wow\, that\'s big!' + '<br>')
+//     } else {
+//         document.write(pokemonList[i].name + ' \(height\: ' + pokemonList[i].height + '\)' + '<br>')
+//     }
+// };
+
+// written using forEach() loop syntax
+// pokemonList.forEach(function(pokemon) {
+//     if (pokemon.height > 15) {
+//         document.write(pokemon.name + ' \(height\: ' + pokemon.height + '\) \- Wow\, that\'s big!' + '<br>')
+//     } else {
+//         document.write(pokemon.name + ' \(height\: ' + pokemon.height + '\)' + '<br>')
+//     }
+// })
+
+// written with the function declaration passed to forEach() to make things clearer
+function myLoopFunction (pokemon) {
+    if (pokemon.height > 15) {
+        document.write(pokemon.name + ' \(height\: ' + pokemon.height + '\) \- Wow\, that\'s big!' + '<br>')
+    } else {
+        document.write(pokemon.name + ' \(height\: ' + pokemon.height + '\)' + '<br>')
+    }
+}
+pokemonList.forEach (myLoopFunction);
