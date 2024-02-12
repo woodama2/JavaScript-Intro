@@ -1,3 +1,5 @@
+let pokemonRepository = (function(){
+
 let pokemonList = [
     { name: 'Bulbasaur', height: 7, types: ['grass', 'poison'] },
     { name: 'Charmander', height: 6, types: ['fire'] },
@@ -11,47 +13,38 @@ let pokemonList = [
     { name: 'Caterpie', height: 3, types: ['bug'] }
 ];
 
+function add(pokemon) {
+    if (typeof pokemon === 'object') {
+        pokemonList.push(pokemon);    
+    }
+}
 
-// function divide(dividend, divisor) {
-//     if (divisor === 0){
-//         return "You're trying to divide by zero."
-//     } else {
-//         let result = dividend / divisor;
-//         return result;
-//     }
-// }
+function getAll(){
+    return pokemonList;
+}
 
-// document.write(divide(4, 2));
-// document.write(divide(7, 0));
-// document.write(divide(1, 4));
-// document.write(divide(12, -3));
+return {
+    add: add,
+    getAll: getAll
+}
+})();
 
 
 
-// written using for() basic loop syntax
-// for (let i = 0; i < pokemonList.length; i++) {
-//     if (pokemonList[i].height > 15) {
-//         document.write(pokemonList[i].name + ' \(height\: ' + pokemonList[i].height + '\) \- Wow\, that\'s big!' + '<br>')
-//     } else {
-//         document.write(pokemonList[i].name + ' \(height\: ' + pokemonList[i].height + '\)' + '<br>')
-//     }
-// };
+// add a new object(pokemon) to the pokemonList
+pokemonRepository.add({
+    name: 'Krabby', height: 4, types: ['water']
+});
+
 
 // written using forEach() loop syntax
-// pokemonList.forEach(function(pokemon) {
-//     if (pokemon.height > 15) {
-//         document.write(pokemon.name + ' \(height\: ' + pokemon.height + '\) \- Wow\, that\'s big!' + '<br>')
-//     } else {
-//         document.write(pokemon.name + ' \(height\: ' + pokemon.height + '\)' + '<br>')
-//     }
-// })
-
-// written with the function declaration passed to forEach() to make things clearer
-function myLoopFunction (pokemon) {
+// print the list of names from pokemonList and corresponding height of that name
+pokemonRepository.getAll().forEach(function(pokemon) {
+    // print a message if the height is bigger than 15
     if (pokemon.height > 15) {
         document.write(pokemon.name + ' \(height\: ' + pokemon.height + '\) \- Wow\, that\'s big!' + '<br>')
     } else {
+        //print without the message
         document.write(pokemon.name + ' \(height\: ' + pokemon.height + '\)' + '<br>')
-    }
-}
-pokemonList.forEach (myLoopFunction);
+    }    
+})
