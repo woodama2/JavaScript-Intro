@@ -40,11 +40,14 @@ let pokemonRepository = (function () {
   }
 
   function loadList() {
+    showLoadingMessage();
     return fetch(apiUrl)
       .then(function (response) {
+        hideLoadingMessage();
         return response.json();
       })
       .then(function (json) {
+        hideLoadingMessage();
         json.results.forEach(function (item) {
           let pokemon = {
             name: item.name,
@@ -56,17 +59,21 @@ let pokemonRepository = (function () {
         });
       })
       .catch(function (e) {
+        hideLoadingMessage();
         console.error(e);
       });
   }
 
   function loadDetails(item) {
+    showLoadingMessage();
     let url = item.detailsUrl;
     return fetch(url)
       .then(function (response) {
+        hideLoadingMessage();
         return response.json();
       })
       .then(function (details) {
+        hideLoadingMessage();
         // Now we add the details to the item
         item.imageUrl = details.sprites.front_default;
         item.height = details.height;
@@ -74,6 +81,7 @@ let pokemonRepository = (function () {
         item.types = details.types;
       })
       .catch(function (e) {
+        hideLoadingMessage();
         console.error(e);
       });
   }
@@ -106,3 +114,11 @@ pokemonRepository.loadList().then(function () {
     pokemonRepository.addListItem(pokemon);
   });
 });
+
+function showLoadingMessage() {
+  document.getElementById("loadingMessage").style.display = "block";
+}
+
+function hideLoadingMessage() {
+  document.getElementById("loadingMessage").style.display = "none";
+}
