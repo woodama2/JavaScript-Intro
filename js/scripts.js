@@ -25,7 +25,10 @@ let pokemonRepository = (function () {
     pokemonList.appendChild(li);
 
     let button = document.createElement("button");
-    button.innerHTML = pokemon.name;
+    button.innerHTML = pokemon.name
+      .split(" ")
+      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(" ");
     li.appendChild(button);
     button.classList.add("btn", "btn-lg", "btn-block", "btn-outline-dark");
     button.setAttribute("data-target", "#exampleModal");
@@ -117,7 +120,7 @@ let pokemonRepository = (function () {
     modalBody.innerHTML = "";
 
     // Clear all existing modal content
-    // modalContainer.innerHTML = "";
+    // modalConta.innerHTML = "";
 
     // Add modal content
     let modalTitle = document.querySelector(".modal-title");
@@ -131,6 +134,8 @@ let pokemonRepository = (function () {
 
     let imageUrl = document.createElement("img");
     imageUrl.classList.add("modal-img");
+    imageUrl.classList.add("img-fluid");
+    imageUrl.classList.add("pokemonImageSize");
     imageUrl.src = pokemon.imageUrl;
     imageUrl.alt = "Front image of " + pokemon.name;
 
@@ -181,6 +186,10 @@ let pokemonRepository = (function () {
       hideModal();
     }
   });
+
+  // $("#myModal").on("shown.bs.modal", function () {
+  //   $("#myInput").trigger("focus");
+  // });
 
   return {
     add: add,
