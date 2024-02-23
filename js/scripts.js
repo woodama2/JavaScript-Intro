@@ -133,9 +133,13 @@ let pokemonRepository = (function () {
 
     let heightElement = document.createElement("p");
     heightElement.innerHTML = "Height: " + pokemon.height + " decimeters";
+    heightElement.classList.add("text-monospace");
+    heightElement.classList.add("font-weight-bold");
 
     let weightElement = document.createElement("p");
     weightElement.innerHTML = "Weight: " + pokemon.weight + " hectograms";
+    weightElement.classList.add("text-monospace");
+    weightElement.classList.add("font-weight-bold");
 
     modalHeader.appendChild(modalTitle);
     modalHeader.appendChild(closeButtonElement);
