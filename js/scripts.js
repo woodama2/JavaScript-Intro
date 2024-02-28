@@ -1,3 +1,4 @@
+// stylelint-disable-next-line
 // IIFE containing repository of pokemons and functions to access them
 let pokemonRepository = (function () {
   let pokemonList = [];
